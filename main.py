@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+from qiskit.visualization import plot_histogram
 def acc_mat_vec1(mat,vec):
     """
     matriz,vector->matriz/vector
@@ -62,3 +64,11 @@ def exp_canicas(mat,vec,clicks):
         vec=acc_mat_vec(mat,vec)
     return vec
 def exp_can_cuant(mat,vec,clicks):
+    for i in range(clicks):
+        vec=acc_mat_vec1(mat,vec)
+    return vec
+# Plot a histogram
+counts = {'1':0.25, '2':0.2, '3':0.2,
+        '4':.35}
+plot_histogram(counts)
+plt.show()
